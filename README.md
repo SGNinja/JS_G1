@@ -4,7 +4,6 @@
 
 ### Integrantes:
 - Ferrari, Tomás
-- Sposto, Orlando
 - Gil, Sebastián
 
 ### Temática del TPO:
@@ -27,4 +26,4 @@ Sitio institucional de la empresa "Gruppo Immobiliare", desarrollado para la pre
 
 **El sitio completo es Responsive**
 
-El alojamiento del mismo, para su prueba online, se realizó en Netlify. La dirección de acceso es www.ospostog1.netlify.com
+El alojamiento del mismo, para su prueba online, se realizó en GitHub Pages. La dirección de acceso es https://sgninja.github.io/JS_G1/
