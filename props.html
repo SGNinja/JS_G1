@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/propiedades.css" />
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="a-container">
+        <a href="index.html">
+          <img src="/./imagenes/others/logo.png" alt="" />
+        </a>
+      </div>
+
+      <nav class="nav-container">
+        <label for="checkbox" class="menu_m" onclick="toggleMenu()">Menu</label>
+        <!--<label for="checkbox" class="menu_c" onclick="toggleMenu()">Close</label>-->
+        <input class="check" type="checkbox" id="checkbox" />
+
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="propiedades.html">Propiedades</a>
+          </li>
+          <li>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="grid_container">
+      <aside class="aside_grid">
+        <section>
+          <h2>Parámetros de propiedades a consultar</h2>
+          <p>Propósito</p>
+          <label><input type="radio" name="proposito" value="1" />Compra</label>
+          <label
+            ><input type="radio" name="proposito" value="2" />Alquiler</label
+          >
+
+          <p>
+          <label for="tipovivienda">Tipo</label>
+          <select
+            class="input_1"
+            name="tipop"
+            id="tipovivienda"
+            onclick="tipoprop()"
+          >
+            <option value="1">Departamento</option>
+            <option value="2">Casa</option>
+            <option value="3">Comercial</option>
+            <option value="4">Terreno</option>
+            <option value="5">Campo</option>
+          </select>
+        </p>
+<p>
+          <div class="dormitorios">
+            <label for="depto">Dormitorios</label>
+            <select class="hab" name="habitaciones" id="habitaciones">
+              <option value="1">Monoambiente</option>
+              <option value="2">1 dormitorio</option>
+              <option value="3">2 dormitorios</option>
+              <option value="4">3+ dormitorios</option>
+            </select>
+          </div>
+        </p>
+        <p>
+          <div class="banios">
+            <label for="banios">Baños</label>
+            <select class="banios" name="banios" id="">
+              <option value="1">1 baño</option>
+              <option value="2">2 baños</option>
+              <option value="3">3+ baños</option>
+            </select>
+            <label for="chechsuit">Baño en suite?</label>
+            <input type="checkbox" name="checksuit" id="checksuit" />
+          </div>
+        </p>
+        <p>
+          <div class="jardin">
+            <p>Jardines</p>
+            <label for="jardel">Delantero?</label>
+            <input type="checkbox" name="checkjd" id="checkjd" />
+            <label for="jartras">Trasero?</label>
+            <input type="checkbox" name="checkjt" id="checkjt" />
+            <label for="pileta">Pileta?</label>
+            <input type="checkbox" name="checkpit" id="checkpil" />
+          </div>
+        </p>
+        </section>
+        <section>
+          <h2>Lista de propiedades</h2>
+          Seleccione
+        </section>
+      </aside>
+      <main class="main_grid">
+        <h1>Presentación de imágenes</h1>
+        <p>
+          Aquí se van a mostrar las fotografías de cada propiedad, con la parte
+          superior con los datos de la misma
+        </p>
+      </main>
+    </div>
+    <script src="/js/script_toggle.js"></script>
+  </body>
+</html>

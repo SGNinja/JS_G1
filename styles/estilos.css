@@ -1,0 +1,264 @@
+body{
+  height: 100vh;
+}
+ul {
+  /* quitar viñetas */
+  list-style: none;
+  padding: 0;
+}
+.body-style {
+  min-height: 100%;
+  background-color: rgb(55 105 166);
+  background-image: url("../imagenes/others/background-apartment.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg-blue{
+  background-color: rgb(55 105 166);
+}
+.bg-gray{
+  background-color: rgba(156, 153, 153, 0.5);
+}
+.flex {
+  /* Crea estructura flexbox */
+  display: flex;
+}
+.font-big {
+  font-size: 5rem;
+}
+.font-small {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Subtle black text shadow */
+}
+.font-xsmall{
+  font-size: 1.5rem;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-white {
+  color: white;
+}
+
+
+.flex-col {
+  /* Crea estructura flexbox */
+  display: flex;
+  flex-direction: column;
+}
+.p-10 {
+  padding: 10%;
+}
+.p-5 {
+  padding: 5%;
+}
+.pb-20px{
+  padding-bottom: 20px;
+}
+.pt-20px{
+  padding-top: 20px;
+}
+.p-15px{
+  padding: 15px;
+}
+.m-5{
+  margin: 5%;
+}
+.mt-10{
+  margin-top: 10%;
+}
+.align-left {
+  align-items: left;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/* Navegación */
+.nav-link{
+  text-decoration: none;
+  color: white;
+  transition: text-decoration 1s ease;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Subtle black text shadow */
+}
+.nav-link:hover{
+  text-decoration: underline;
+}
+.icon{
+  width: 15%;
+}
+.col50 {
+  flex-basis: 50%;
+}
+
+.logo-img {
+  padding: 15px;
+  min-width: 50%;
+  max-width: 50%;
+}
+.footer{
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
+  padding: 15px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.ver-propiedades {
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+  max-width: 50%;
+}
+.ver-propiedades:hover{
+  transform: scale(1.2);
+}
+
+.button{
+  border-radius: 8px;
+  border-style: none;
+  color: black;
+  padding: 10px 16px;
+}
+.button:hover{
+  cursor: pointer;
+  background-color: white;
+}
+
+
+/* Diseño responsive requiere distintos tamaños de logo para las pantallas */
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  .ver-propiedades{
+    max-width: 25%;
+    background-color: #ffffff;
+  }
+  .logo-img {
+    min-width: 70px;
+    max-width: 15%;
+  }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1025px) {
+  .ver-propiedades{
+    max-width: 12%;
+  }
+  form {
+    max-width: 800px;
+    margin: 0 auto; /* centrado horizontal */
+  }
+}
+
+/* textarea del form de consultas mas grande */
+textarea.form-control {
+  height: 150px;
+}
+
+/* Seccion Sobre Nosotros */
+
+.member-card-der {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, -50%);
+  animation: slideToCenterRight 3s ease forwards; /* Duración de la animación y efecto */
+}
+.member-card-izq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, -50%);
+  animation: slideToCenterLeft 3s ease forwards; /* Duración de la animación y efecto */
+}
+
+@keyframes slideToCenterLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes slideToCenterRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+.member-img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.member-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.member-card:nth-child(even) .member-img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.member-info {
+  flex-grow: 1;
+}
+.color-black{
+  color: rgb(33, 33, 33);
+}
+
+.filtros{
+  background-color: rgb(223, 217, 209);
+  border: #000000 1px;
+  border-radius: 10px;
+}
+
+.error-mensaje {
+  color: red;
+}
+
+#mensajeSuscripcion {
+  display: none;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form-check{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

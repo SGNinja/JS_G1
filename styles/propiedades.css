@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  src: url(/Fonts/MaterialSymbolsSharp[FILL\,GRAD\,opsz\,wght].woff2) format("woff");
+}
+
+body {
+  background-color: rgb(55, 105, 166);
+}
+
+.menu_m,
+.menu_m1{
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Preferred icon size */
+  /*display: inline-flex;*/
+  background-color: rgb(55, 105, 166);
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu_m1
+{
+    background-color: rgb(231, 42, 216);
+  }
+
+.check
+{
+  display: none;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: end; /*Vertical*/
+}
+
+.a-container {
+  /*display:inline-flex;*/
+  text-decoration: none;
+  /*width:8vw;*/
+  max-width: 6vw;
+  min-width: 50px;
+}
+
+.a-container img {
+  /*display:inline-flex;*/
+  /*border: 2px;
+  border-style: solid;
+  border-color: black;*/
+  max-width: 6vw;
+  min-width: 50px;
+  /*max-height: auto;*/
+}
+
+.nav-container {
+  display: inline-flex;
+  padding: 0px;
+  width: 92vw;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+ul {
+  display: none;
+  /*width: 80vw;*/
+  margin: 0px;
+  /*width: 80vw;*/
+  text-wrap: nowrap;
+  padding: 0px;
+}
+
+li {
+  /* quitar viñetas */
+  display: none;
+  list-style: none;
+  text-wrap: nowrap;
+  padding: 0px 20px 0px 20px;
+}
+.aside_grid{grid-area: aside; }
+.main_grid{grid-area: main; }
+.grid_container{
+  display:grid;
+  gap: 25px;
+  grid-template-areas: 'aside aside main main main main main';
+}
+
+/*.check:checked + .menu{
+    display: grid;
+    grid-auto-flow: row;
+    position: fixed;
+    top: 90px;
+    right: 0px;
+    
+    width: 50%;
+    background-color: var(--head-back);
+    justify-content: center;
+    z-index: 2;
+  }*/
+
+/*.menu-hamb{
+  display: inline-flex;
+  }*/

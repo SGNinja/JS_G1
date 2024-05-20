@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gruppo Immobiliare</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/estilos.css">
+</head>
+
+<body class="bg-blue text-white">
+ <header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <!-- logo -->
+      <a class="navbar-brand" href="index.html">
+        <img class="logo-img" src="./imagenes/others/logo.png" alt="">
+      </a>
+
+      <!-- Botón para colapsar en pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido de la barra de navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto para alinear a la derecha -->
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="propiedades.html">Propiedades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="sobreNosotros.html">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ </header>
+
+ <main>
+  <div class="container my-5 text-center">
+    <h1 class="mb-4">Contactate con nosotros</h1>
+    <form onsubmit="return validarFormulario(event)" id="formularioContacto">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label>Nombre</label>
+          <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre">
+          <div id="nombreError" class="error-mensaje"></div>
+        </div>
+        <div class="col-md-6">
+          <label>Apellido</label>
+          <input type="text" id="apellido" class="form-control" placeholder="Ingrese su apellido">
+          <div id="apellidoError" class="error-mensaje"></div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label>Correo Electrónico</label>
+          <input type="email" id="email" class="form-control" placeholder="Ingrese su correo electrónico">
+          <div id="emailError" class="error-mensaje"></div>
+        </div>
+        <div class="col-md-6">
+          <label>Tipo de Propiedad</label>
+          <select class="form-select" id="propiedad">
+            <option value="">Seleccione una opcion</option>
+            <option value="departamento">Departamento</option>
+            <option value="casa">Casa</option>
+            <option value="terreno">Terreno</option>
+            <option value="campo">Campo</option>
+          </select>
+          <div id="propiedadError" class="error-mensaje"></div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Consulta</label>
+        <textarea class="form-control" id="detalles" placeholder="Ingrese su consulta" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input id="suscripcion" type="checkbox" class="form-check-input m-2">
+          <label class="form-check-label">Quiero suscribirme al newsletter</label>
+        </div>
+        <div id="mensajeSuscripcion"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <input type="submit" class="btn btn-light" value="Enviar">
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Todos los derechos reservados</p>
+</footer>
+<script src="js/validateContact.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"></script>
+</body>
+
+</html>
