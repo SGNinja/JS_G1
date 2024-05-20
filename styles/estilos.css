@@ -137,31 +137,6 @@ ul {
 }
 
 
-/* Diseño responsive requiere distintos tamaños de logo para las pantallas */
-/* Para tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
-
-  .ver-propiedades{
-    max-width: 25%;
-    background-color: #ffffff;
-  }
-  .logo-img {
-    min-width: 70px;
-    max-width: 15%;
-  }
-}
-
-/* Para pantallas grandes */
-@media (min-width: 1025px) {
-  .ver-propiedades{
-    max-width: 12%;
-  }
-  form {
-    max-width: 800px;
-    margin: 0 auto; /* centrado horizontal */
-  }
-}
-
 /* textarea del form de consultas mas grande */
 textarea.form-control {
   height: 150px;
@@ -171,6 +146,7 @@ textarea.form-control {
 
 .member-card-der {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
@@ -186,12 +162,13 @@ textarea.form-control {
 }
 .member-card-izq {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   background-color: #ffffff;
   color: #000000;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   max-width: 800px;
   margin-left: auto;
@@ -220,7 +197,6 @@ textarea.form-control {
 .member-img {
   width: 100px;
   height: 100px;
-  margin-right: 20px;
 }
 
 .member-card:nth-child(even) {
@@ -261,4 +237,50 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+/* Para pantallas grandes */
+@media (min-width: 1025px) {
+  .ver-propiedades{
+    max-width: 12%;
+  }
+  form {
+    max-width: 800px;
+    margin: 0 auto; /* centrado horizontal */
+  }
+  .member-card-izq{
+    flex-direction: row;
+  }
+  .member-card-der{
+    flex-direction: row;
+  }
+  .member-img{
+    margin-right: 20px;
+  }
+}
+/* Diseño responsive requiere distintos tamaños de logo para las pantallas */
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  .ver-propiedades{
+    max-width: 25%;
+    background-color: #ffffff;
+  }
+  .logo-img {
+    min-width: 70px;
+    max-width: 15%;
+  }
+  .member-card-izq{
+    flex-direction: row;
+    margin-right: 20px;
+  }
+  .member-card-der{
+    flex-direction: row;
+    margin-right: 20px;
+  }
+  .member-img{
+    margin-right: 20px;
+  }
 }
