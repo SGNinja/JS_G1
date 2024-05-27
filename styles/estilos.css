@@ -119,6 +119,16 @@ ul {
   transform: scale(1.2);
 }
 
+.formFilter{
+  border: #000000 3px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tipoPropiedad{
+  flex-direction: column;
+}
 .button{
   border-radius: 8px;
   border-style: none;
@@ -250,11 +260,22 @@ textarea.form-control {
   .member-img{
     margin-right: 20px;
   }
+  .formFilter{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tipoPropiedad{
+    flex-direction: row;
+  }
 }
 /* Diseño responsive requiere distintos tamaños de logo para las pantallas */
 /* Para tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
 
+  .formFilter{
+    flex-direction: column;
+  }
   .ver-propiedades{
     max-width: 25%;
     background-color: #ffffff;

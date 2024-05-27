@@ -38,7 +38,6 @@ function generarPropiedadHTML(propiedad) {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
       <div class="card-body">
           <h5 class="card-title">${propiedad.titulo}</h5>
           <p class="card-text">${propiedad.descripcion}</p>
@@ -59,15 +58,37 @@ function generarPropiedadHTML(propiedad) {
         </div>
       </div>
     </div>
-
-
   `;
 }
-
-
-
 // Genera el HTML para todas las casas
 const htmlCasas = datos.map(propiedad => generarPropiedadHTML(propiedad)).join('');
 
 // Agrega el HTML generado a otro sitio (en este caso, un div con el ID "casas")
 document.getElementById('propiedades').innerHTML = htmlCasas;
+
+document.getElementById('filterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  applyFilter();
+});
+
+
+
+function applyFilter() {
+  const tipo = document.getElementById('tipo').value;
+  const maxPrecio = document.getElementById('maxPrecio').value;
+  const minHabitaciones = document.getElementById('minHabitaciones').value;
+
+  let filteredData = datos;
+  if (tipo) {
+      filteredData = filteredData.filter(property => property.tipo === tipo);
+  }
+  if (maxPrecio) {
+      filteredData = filteredData.filter(property => property.precio <= maxPrecio);
+  }
+  if (minHabitaciones) {
+      filteredData = filteredData.filter(property => property.habitaciones >= minHabitaciones);
+  }
+  console.log("Datos filtrados: ", filteredData)
+  const htmlCasas = filteredData.map(propiedad => generarPropiedadHTML(propiedad)).join('');
+  document.getElementById('propiedades').innerHTML = htmlCasas;
+}
