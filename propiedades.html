@@ -49,41 +49,6 @@
     <main>
       <div class="flex-col p-3">
         <h1 class="flex-col justify-center align-center">Nuestras Propiedades</h1>
-        <div class='bg-white text-black rounded m-2' >
-          <form id="filterForm" class="flex formFilter">
-            <div class="p-2">
-              <label class="p-2 m-0">Ambientes Min: </label>
-              <select id="minHabitaciones">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </div>
-            <div class="p-2">
-              <div class="p-2 m-0 flex tipoPropiedad">
-                <label for="tipo">Tipo de Propiedad:</label>
-                <select id="tipo" name="tipo">
-                    <option value="">Todos</option>
-                    <option value="Casa">Casa</option>
-                    <option value="Departamento">Departamento</option>
-                    <option value="Terreno">Terreno</option>
-                </select>
-              </div>
-            </div>
-            <div class="p-2 flex align-center">
-              <div class="precio">
-                <label for="rangeSlider">Precio Maximo:</label>
-                <input type="range" id="maxPrecio" min="0" max="1000000" step="10000" value='1000000' oninput="updateValue(this.value)">
-              </div>
-              <div class="slider-value"><span id="sliderValue">1000000</span></div>
-
-            </div>
-            <div class="submitFilter">
-              <button type="submit">Buscar</button>
-            </div>
-          </form>
-        </div>
         <div class="flex">
           <!-- ####### -->
           <div id="propiedades" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">

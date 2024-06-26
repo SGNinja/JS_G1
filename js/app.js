@@ -1,11 +1,11 @@
 
 
-import datos from './datos.js';
+// import datos from './datos.js';
 // Función para generar el HTML de cada producto
 function generarPropiedadHTML(propiedad) {
-  const img1 = './imagenes/casa' + propiedad.id + '/' + propiedad.foto1
-  const img2 = './imagenes/casa' + propiedad.id + '/' + propiedad.foto2
-  const img3 = './imagenes/casa' + propiedad.id + '/' + propiedad.foto3
+  const img1 = './imagenes/' + propiedad.foto1
+  const img2 = './imagenes/' + propiedad.foto2
+  const img3 = './imagenes/' + propiedad.foto3
   const Id = 'carouselExampleIndicators'+propiedad.id
 
   return `
@@ -60,35 +60,63 @@ function generarPropiedadHTML(propiedad) {
     </div>
   `;
 }
-// Genera el HTML para todas las casas
-const htmlCasas = datos.map(propiedad => generarPropiedadHTML(propiedad)).join('');
+// Function to fetch all properties using async/await from table propiedades
+async function fetchAllProperties() {
+  // The URL of the API endpoint
+  const url = 'https://codo-a-codo-backend.vercel.app/api/propiedades';
+  try {
+    // Making a GET request using fetch and awaiting the response
+    const response = await fetch(url);
+    // Checking if the request was successful
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    // Parsing the response as JSON and awaiting the result
+    const data = await response.json();
+    // Returning the data
+    return data;
 
-// Agrega el HTML generado a otro sitio (en este caso, un div con el ID "casas")
-document.getElementById('propiedades').innerHTML = htmlCasas;
-
-document.getElementById('filterForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  applyFilter();
-});
-
-
-
-function applyFilter() {
-  const tipo = document.getElementById('tipo').value;
-  const maxPrecio = document.getElementById('maxPrecio').value;
-  const minHabitaciones = document.getElementById('minHabitaciones').value;
-
-  let filteredData = datos;
-  if (tipo) {
-      filteredData = filteredData.filter(property => property.tipo === tipo);
+  } catch (error) {
+    // Handling errors
+    console.error('There was a problem with the fetch operation:', error);
   }
-  if (maxPrecio) {
-      filteredData = filteredData.filter(property => property.precio <= maxPrecio);
-  }
-  if (minHabitaciones) {
-      filteredData = filteredData.filter(property => property.habitaciones >= minHabitaciones);
-  }
-  console.log("Datos filtrados: ", filteredData)
-  const htmlCasas = filteredData.map(propiedad => generarPropiedadHTML(propiedad)).join('');
-  document.getElementById('propiedades').innerHTML = htmlCasas;
 }
+// Call the function to make the request and store the result in a constant
+fetchAllProperties()
+  .then(data => {
+    const propertiesData = data;
+    // Genera el HTML para todas las casas
+    const htmlCasas = propertiesData.map(propiedad => generarPropiedadHTML(propiedad)).join('');
+    // Agrega el HTML generado a otro sitio (en este caso, un div con el ID "propiedades")
+    document.getElementById('propiedades').innerHTML = htmlCasas;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+// document.getElementById('filterForm').addEventListener('submit', function(e) {
+//   e.preventDefault();
+//   applyFilter();
+// });
+
+
+
+// function applyFilter() {
+//   const tipo = document.getElementById('tipo').value;
+//   const maxPrecio = document.getElementById('maxPrecio').value;
+//   const minHabitaciones = document.getElementById('minHabitaciones').value;
+
+//   let filteredData = propertiesData;
+//   if (tipo) {
+//       filteredData = filteredData.filter(property => property.tipo === tipo);
+//   }
+//   if (maxPrecio) {
+//       filteredData = filteredData.filter(property => property.precio <= maxPrecio);
+//   }
+//   if (minHabitaciones) {
+//       filteredData = filteredData.filter(property => property.habitaciones >= minHabitaciones);
+//   }
+//   console.log("Datos filtrados: ", filteredData)
+//   const htmlCasas = filteredData.map(propiedad => generarPropiedadHTML(propiedad)).join('');
+//   document.getElementById('propiedades').innerHTML = htmlCasas;
+// }
