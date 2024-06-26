@@ -96,7 +96,12 @@ ul {
 .col50 {
   flex-basis: 50%;
 }
-
+.bg-red{
+  background-color: red;
+}
+.bg-green{
+  background-color: green;
+}
 .logo-img {
   padding: 15px;
   min-width: 50%;

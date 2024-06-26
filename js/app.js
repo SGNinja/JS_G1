@@ -7,6 +7,13 @@ function generarPropiedadHTML(propiedad) {
   const img2 = './imagenes/' + propiedad.foto2
   const img3 = './imagenes/' + propiedad.foto3
   const Id = 'carouselExampleIndicators'+propiedad.id
+  var colorOperacion = 'bg-red'
+  if (propiedad.operacion == 'Venta'){
+    colorOperacion = 'bg-red'
+  }
+  else{
+    colorOperacion = 'bg-green'
+  }
 
   return `
     <div class="col pb-5">
@@ -54,6 +61,10 @@ function generarPropiedadHTML(propiedad) {
               <img class="icon" src="./imagenes/icons/dollar.png"/>
               <p>${propiedad.precio}</p>
             </div>
+          </div>
+
+          <div class="flex-col align-center">
+            <p class="button ${colorOperacion}">${propiedad.operacion}</p>
           </div>
         </div>
       </div>
