@@ -73,6 +73,7 @@ async function fetchAllProperties() {
     }
     // Parsing the response as JSON and awaiting the result
     const data = await response.json();
+    console.log("Data: ", data)
     // Returning the data
     return data;
 
